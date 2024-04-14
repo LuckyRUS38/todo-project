@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import CreateTodo from '../../createTodo/createTodo'
 import Todo from '../../todo/todo'
 import './Home.css'
 
@@ -28,7 +29,8 @@ function Home() {
 					Tasks list:
 				</h1>
 				<div className='flex flex-col justify-start items-start rounded-xl w-3/4 bg-white shadow-2xl tasks'>
-					<div className='container mt-10 ml-5 mb-8'>
+					<CreateTodo />
+					<div className='container ml-5 mb-8'>
 						<h1 className='text-gray-900 mb-2 text-lg'>Main tasks</h1>
 						<Todo isChecked={true} text='Learn programming by 12 a.m' />
 						<Todo isChecked={true} text='Learn how to cook by 1 p.m' />
