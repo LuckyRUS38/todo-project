@@ -19,7 +19,6 @@ function Register() {
 			return false
 		} else {
 			localStorage.setItem('isLogin', 'true')
-			// Перенаправляем пользователя на главную страницу с параметром isLogin = true
 			navigate('/', { state: { isLogin: true } })
 			return true
 		}

@@ -1,5 +1,5 @@
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './Login.css'
 import slide from '/slide.png'
 
@@ -9,10 +9,14 @@ interface ILoginState {
 }
 
 function Login() {
+	const navigate = useNavigate()
 	const { register, handleSubmit } = useForm<ILoginState>()
 
 	const onSubmit: SubmitHandler<ILoginState> = data => {
 		console.log(data)
+		localStorage.setItem('isLogin', 'true')
+		navigate('/', { state: { isLogin: true } })
+		return true
 	}
 
 	return (

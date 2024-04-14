@@ -1,18 +1,15 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-
 import phone from '/phone_red.png'
 
 function Starter() {
-	// Проверяем значение isLogin в localStorage
 	const isLogin = localStorage.getItem('isLogin')
 
 	useEffect(() => {
-		// Если пользователь авторизован, перенаправляем на главную страницу
 		if (isLogin === 'true') {
-			window.location.href = '/' // или другой путь, куда нужно перенаправить
+			window.location.href = '/'
 		}
-	}, [isLogin]) // useEffect будет вызываться только при изменении isLogin
+	}, [isLogin])
 
 	return (
 		<div className='relative min-h-screen flex flex-col justify-center items-center px-4 wrapper'>
